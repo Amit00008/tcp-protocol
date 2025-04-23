@@ -23,8 +23,8 @@ A simple command-line chat application using **TCP sockets** in **Node.js**, bui
 ## 🛠 Installation
 
 ```bash
-git clone https://github.com/yourusername/tcp-chat-app.git
-cd tcp-chat-app
+git clone https://github.com/Amit00008/tcp-protocol
+cd tcp-protocol
 npm install
 ```
 
