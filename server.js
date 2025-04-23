@@ -11,7 +11,7 @@ const rl = readline.createInterface({
 class MyServer {
   constructor(port, host) {
     this.server = createServer((socket) => {
-      // Ensure socket handling only happens once for each connection
+      
       if (this.socket) {
        
         socket.end();
