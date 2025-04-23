@@ -11,20 +11,34 @@ const rl = readline.createInterface({
 class MyServer {
   constructor(port, host) {
     this.server = createServer((socket) => {
+      // Ensure socket handling only happens once for each connection
+      if (this.socket) {
+       
+        socket.end();
+        return;
+      }
+
       console.log(chalk.green("✅ Client connected"));
-      rl.prompt();
-      this.handleInput();
       this.socket = socket;
 
+      rl.prompt();
+      this.handleInput();
       this.listenData();
 
       socket.on("end", () => {
         rl.close();
+        readline.clearLine(process.stdout, 0);
+      readline.cursorTo(process.stdout, 0);
+        readline.clearLine(process.stdout, 0);
         console.log(chalk.redBright("❌ Client disconnected!!"));
+        this.socket = null; // Reset the socket after client disconnects
       });
 
       socket.on("error", (err) => {
         rl.close();
+        readline.clearLine(process.stdout, 0);
+      readline.cursorTo(process.stdout, 0);
+       
         console.log(chalk.yellow("⚠️ Socket error:"), chalk.gray(err.message));
       });
     });
