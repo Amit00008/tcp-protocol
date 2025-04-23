@@ -1,3 +1,32 @@
-/node_modules*
+# Dependency directories
+/node_modules/
 
-/pnpm-lock.yaml
+# Lockfiles
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Optional: coverage from tests
+coverage/
+
+# Optional: compiled output
+dist/
+build/
